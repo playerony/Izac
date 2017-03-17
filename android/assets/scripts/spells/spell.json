@@ -1,0 +1,284 @@
+[
+	{
+		name: "Fire Arrow",
+		description: "Scroll 1",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 20,
+		speed: 5.3,
+		time: 20,
+		buy: 100,
+		sell: 50,
+		id: 1,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Small Hibernation",
+		description: "Scroll 1",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 20,
+		speed: 3.3,
+		time: 3,
+		buy: 100,
+		sell: 50,
+		id: 2,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Ice Arrow",
+		description: "Scroll 1",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 20,
+		speed: 5.3,
+		time: 20,
+		buy: 100,
+		sell: 50,
+		id: 3,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Small Sun Shot",
+		description: "Scroll 2",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 10,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 4,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Garnet",
+		description: "Holy shit its a garnet",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 25,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 5,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Hibernation",
+		description: "Scroll 1",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 20,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 6,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Ice Ball",
+		description: "Scroll 1",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 30,
+		speed: 5.3,
+		time: 10,
+		buy: 100,
+		sell: 50,
+		id: 7,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Small District",
+		description: "Shield",
+		file: "scroll_1.png",
+		type: "shield",
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 8,
+		itemType: "spell"
+		spellType: "other"
+	},
+	
+	{
+		name: "Fire Ball",
+		description: "Scroll 1",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 30,
+		speed: 5.3,
+		time: 10,
+		buy: 100,
+		sell: 50,
+		id: 9,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Bigger Sun Shot",
+		description: "Scroll 3",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 20,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 10,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Throw Garnet",
+		description: "Holy shit its a garnet",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 30,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 11,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Ice Lance",
+		description: "Scroll 1",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 30,
+		speed: 5.3,
+		time: 10,
+		buy: 100,
+		sell: 50,
+		id: 12,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "District ?",
+		description: "Shield",
+		file: "scroll_1.png",
+		type: "shield",
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 13,
+		itemType: "spell"
+		spellType: "other"
+	},
+	
+	{
+		name: "Aurelion",
+		description: "Aurelion Sol",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 50,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 14,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Hell fire",
+		description: "Aurelion Sol",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 50,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 15,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Indestructibility",
+		description: "indestructibility",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 50,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 16,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Under Control",
+		description: "make a pet",
+		file: "scroll_1.png",
+		type: "control",
+		damage: 50,
+		speed: 5.3,
+		time: 15,
+		buy: 100,
+		sell: 50,
+		id: 17,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Massive Hibernation",
+		description: "Scroll 1",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 20,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 18,
+		itemType: "spell"
+		spellType: "shot"
+	},
+	
+	{
+		name: "Huge Sun Shot",
+		description: "Scroll 4",
+		file: "scroll_1.png",
+		type: "spell",
+		damage: 40,
+		speed: 5.3,
+		time: 5,
+		buy: 100,
+		sell: 50,
+		id: 19,
+		itemType: "spell"
+		spellType: "shot"
+	},
+]

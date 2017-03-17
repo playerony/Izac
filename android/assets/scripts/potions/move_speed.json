@@ -1,0 +1,37 @@
+[
+	{
+		name: "Essence of Speed",
+		description: "Increase the speed for 1 minute",
+		file: "move_speed_potion_1.png",
+		type: "speed",
+		bonus: 0.01,
+		time: 60,
+		buy: 15,
+		sell: 5,
+		itemType: "potion"
+	},
+			
+	{
+		name: "Elixir of Speed",
+		description: "Increase the speed for 3 minutes",
+		file: "move_speed_potion_2.png",
+		type: "speed",
+		bonus: 0.01,
+		time: 180,
+		buy: 100,
+		sell: 50,
+		itemType: "potion"
+	},
+	
+	{
+		name: "Fast and furious !?",
+		description: "Permanent increase your speed",
+		file: "move_speed_potion_3.png",
+		type: "max_speed",
+		bonus: 0.02,
+		buy: 500,
+		sell: 250,
+		isPermanent: true,
+		itemType: "potion"
+	}
+]
