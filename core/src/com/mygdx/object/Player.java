@@ -21,7 +21,6 @@ public class Player extends Entity
 {   
     private AbilityController abilityController;
     private Equipment equipment;
-    private SpellIdentity spellIdentity;
     
     private final float speed = 5.2f;
     
@@ -39,8 +38,6 @@ public class Player extends Entity
         
         equipment = new Equipment();
         abilityController = new AbilityController(this);
-        
-        spellIdentity = SpellIdentity.SPELL_3;
     }
     
     public void update()
@@ -78,11 +75,16 @@ public class Player extends Entity
             this.yVel = -speed;
         
         if(Gdx.input.isKeyPressed(Input.Keys.SPACE))
-            abilityController.shoot(spellIdentity, equipment.getSpellCard());
+            abilityController.shoot(equipment.getSpellCard());
     }
 
     public AbilityController getAbilityController()
     {
         return abilityController;
+    }
+
+    public Equipment getEquipment()
+    {
+        return equipment;
     }
 }

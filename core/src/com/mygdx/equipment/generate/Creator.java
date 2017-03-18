@@ -34,7 +34,7 @@ public abstract class Creator
     {
         int value = random.nextInt(9) + 1;
         
-        if(value <= 2)
+        if(value <= 7)
             return false;
         
         return true;

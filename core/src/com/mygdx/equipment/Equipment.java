@@ -44,7 +44,6 @@ public class Equipment
                 if(it.name.equals(item.name) && it.packable)
                 {
                     it.time += item.time;
-                    
                     isAdd = true;
                     
                     break;

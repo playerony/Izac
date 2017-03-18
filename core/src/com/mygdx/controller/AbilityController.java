@@ -41,12 +41,19 @@ public class AbilityController
         toRemoveAbilities = new ArrayList<Ability>();
     }
     
-    public void shoot(SpellIdentity spellIdentity, SpellCard spellCard)
+    public void shoot(SpellCard spellCard)
     {
+        SpellIdentity spellIdentity = SpellIdentity.SPELL_0;
+        
+        if(spellCard != null)
+        {
+            spellIdentity = SpellIdentity.valueOf("SPELL_" + spellCard.id);
+        }
+        
         switch(spellIdentity)
         {
             case SPELL_0:
-                
+                new FireBall(player, spellCard, player.getxVel(), player.getyVel());
                 break;
                 
             case SPELL_1:

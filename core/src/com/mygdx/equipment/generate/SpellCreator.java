@@ -24,7 +24,6 @@ public class SpellCreator extends Creator
             {
                 case 0:
                     jsonValue = itemLoader.getSpells().get(random.nextInt(7));
-                    //jsonValue = itemLoader.getSpells().get(0);
                     break;
                     
                 case 1:
@@ -32,8 +31,7 @@ public class SpellCreator extends Creator
                     break;
                     
                 default:
-                    //jsonValue = itemLoader.getSpells().get(random.nextInt(7) + 13);
-                    jsonValue = itemLoader.getSpells().get(13);
+                    jsonValue = itemLoader.getSpells().get(random.nextInt(7) + 13);
                     break;
             }
             
