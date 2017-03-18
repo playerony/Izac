@@ -39,4 +39,9 @@ public abstract class Ability extends Entity
     public abstract void update();
     
     public abstract void render(float delta);
+
+    public SpellCard getSpellCard()
+    {
+        return spellCard;
+    }
 }

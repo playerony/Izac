@@ -14,5 +14,6 @@ public enum Element
     fire,
     ice,
     light,
+    mind,
     other
 }

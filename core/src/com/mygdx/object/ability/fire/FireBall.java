@@ -39,7 +39,7 @@ public class FireBall extends Ability
     {
         shapeRenderer.setColor(Color.RED);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.circle(x, y, 10.0f);
+        shapeRenderer.circle(x, y, r);
         shapeRenderer.end();
     }
 }

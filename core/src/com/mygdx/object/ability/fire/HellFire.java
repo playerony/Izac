@@ -34,8 +34,6 @@ public class HellFire extends Ability
         
         for(int i=0 ; i<shots ; i++)
         {
-            xPos = (float) (radius * Math.sin(2 * Math.PI * (i / shots))) + x;
-            yPos = (float) (radius * -Math.cos(2 * Math.PI * (i / shots))) + y;
             xV = (float) (radius * Math.sin(2 * Math.PI * (i / shots)));
             yV = (float) (radius * -Math.cos(2 * Math.PI * (i / shots)));
             

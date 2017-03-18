@@ -19,6 +19,8 @@ import com.mygdx.util.Constants;
  */
 public class Player extends Entity
 {   
+    private boolean clicked = false;
+    
     private AbilityController abilityController;
     private Equipment equipment;
     
@@ -74,7 +76,7 @@ public class Player extends Entity
         else if(Gdx.input.isKeyPressed(Input.Keys.DOWN))
             this.yVel = -speed;
         
-        if(Gdx.input.isKeyPressed(Input.Keys.SPACE))
+        if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE))
             abilityController.shoot(equipment.getSpellCard());
     }
 

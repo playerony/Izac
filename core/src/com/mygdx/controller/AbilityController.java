@@ -10,6 +10,8 @@ import com.mygdx.game.MyGdxGame;
 import com.mygdx.object.Player;
 import com.mygdx.object.SpellIdentity;
 import com.mygdx.object.ability.Ability;
+import com.mygdx.object.ability.fire.Aurelion;
+import com.mygdx.object.ability.fire.Aurelions;
 import com.mygdx.object.ability.fire.FireBall;
 import com.mygdx.object.ability.fire.HellFire;
 import com.mygdx.object.ability.fire.LavaBall;
@@ -53,7 +55,7 @@ public class AbilityController
         switch(spellIdentity)
         {
             case SPELL_0:
-                new FireBall(player, spellCard, player.getxVel(), player.getyVel());
+                new Aurelions(player, spellCard, 4);
                 break;
                 
             case SPELL_1:
@@ -66,6 +68,10 @@ public class AbilityController
                 
             case SPELL_3:
                 new HellFire(player, spellCard);
+                break;
+                
+            case SPELL_14:
+                new Aurelions(player, spellCard, 2);
                 break;
         }
     }
