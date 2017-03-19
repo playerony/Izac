@@ -42,7 +42,7 @@ public class IceBall extends Ability
         timeState+=Gdx.graphics.getDeltaTime();
         if(timeState >= 5.0f)
         {
-            player.getAbilityController().addAbility(new Ice(player, x, y));
+            player.getAbilityController().addAbility(new Ice(player, spellCard, x, y));
             timeState = 0.0f;
         }
         

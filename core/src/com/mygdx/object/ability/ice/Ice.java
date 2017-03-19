@@ -8,6 +8,7 @@ package com.mygdx.object.ability.ice;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.mygdx.equipment.SpellCard;
 import com.mygdx.object.Player;
 import com.mygdx.object.ability.Ability;
 
@@ -19,9 +20,9 @@ public class Ice extends Ability
 {
     private float timeState;
 
-    public Ice(Player player, float x, float y)
+    public Ice(Player player, SpellCard spellCard, float x, float y)
     {
-        super(player, x, y);
+        super(player, spellCard, x, y);
         
         this.timeState = 0.0f;
         

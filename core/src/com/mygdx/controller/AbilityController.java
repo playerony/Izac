@@ -10,11 +10,13 @@ import com.mygdx.game.MyGdxGame;
 import com.mygdx.object.Player;
 import com.mygdx.object.SpellIdentity;
 import com.mygdx.object.ability.Ability;
-import com.mygdx.object.ability.fire.Aurelion;
 import com.mygdx.object.ability.fire.Aurelions;
 import com.mygdx.object.ability.fire.FireBall;
 import com.mygdx.object.ability.fire.HellFire;
 import com.mygdx.object.ability.fire.LavaBall;
+import com.mygdx.object.ability.ice.IceWave;
+import com.mygdx.object.ability.other.District;
+import com.mygdx.object.ability.other.ThrowGarnet;
 import java.util.ArrayList;
 
 /**
@@ -55,7 +57,7 @@ public class AbilityController
         switch(spellIdentity)
         {
             case SPELL_0:
-                new Aurelions(player, spellCard, 4);
+                new District(player, spellCard, 75.0f);
                 break;
                 
             case SPELL_1:

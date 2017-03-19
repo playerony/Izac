@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mygdx.object.ability.ice;
+package com.mygdx.object.ability.other;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.mygdx.equipment.SpellCard;
@@ -16,16 +15,25 @@ import com.mygdx.object.ability.Ability;
  *
  * @author pawel_000
  */
-public class IceWave extends Ability
+public class Bullet extends Ability
 {
-    private float timeState;
 
-    public IceWave(Player player, SpellCard spellCard)
+    public Bullet(Player player, SpellCard spellCard, float xVel, float yVel)
     {
         super(player, spellCard);
         
-        this.r = 0.0f;
-        this.timeState = 0.0f;
+        this.xVel = xVel;
+        this.yVel = yVel;
+        
+        player.getAbilityController().addAbility(this);
+    }
+    
+    public Bullet(Player player, SpellCard spellCard, float x, float y, float xVel, float yVel)
+    {
+        super(player, spellCard, x, y);
+        
+        this.xVel = xVel;
+        this.yVel = yVel;
         
         player.getAbilityController().addAbility(this);
     }
@@ -33,19 +41,14 @@ public class IceWave extends Ability
     @Override
     public void update()
     {
-        r += 1.3f;
-        
-        timeState+=Gdx.graphics.getDeltaTime();
-        if(timeState >= 5.0f)
-        {
-            player.getAbilityController().removeAbility(this);
-        }
+        x += xVel;
+        y += yVel;
     }
 
     @Override
     public void render(float delta)
     {
-        shapeRenderer.setColor(Color.OLIVE);
+        shapeRenderer.setColor(Color.BLACK);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.circle(x, y, r);
         shapeRenderer.end();

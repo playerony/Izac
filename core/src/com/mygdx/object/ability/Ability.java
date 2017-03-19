@@ -29,11 +29,12 @@ public abstract class Ability extends Entity
         this.spellCard = spellCard;
     }
     
-    public Ability(Player player, float x, float y)
+    public Ability(Player player, SpellCard spellCard, float x, float y)
     {
         super(x, y);
         
         this.player = player;
+        this.spellCard = spellCard;
     }
     
     public abstract void update();

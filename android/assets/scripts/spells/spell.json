@@ -48,7 +48,7 @@
 	},
 	
 	{
-		name: "Small Sun Shot",
+		name: "Lighting",
 		description: "Scroll 2",
 		file: "scroll_1.png",
 		type: "spell",
@@ -159,7 +159,7 @@
 	},
 	
 	{
-		name: "Bigger Sun Shot",
+		name: "Storm",
 		description: "Scroll 3",
 		file: "scroll_1.png",
 		type: "spell",
@@ -299,21 +299,5 @@
 		element: "mind",
 		itemType: "spell"
 		spellType: "shot"
-	},
-	
-	{
-		name: "Huge Sun Shot",
-		description: "Scroll 4",
-		file: "scroll_1.png",
-		type: "spell",
-		damage: 40,
-		speed: 5.3,
-		time: 5,
-		buy: 100,
-		sell: 50,
-		id: 20,
-		element: "light",
-		itemType: "spell"
-		spellType: "shot"
-	},
+	}
 ]

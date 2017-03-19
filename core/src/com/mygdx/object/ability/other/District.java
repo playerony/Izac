@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mygdx.object.ability.fire;
+package com.mygdx.object.ability.other;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -16,50 +16,54 @@ import com.mygdx.object.ability.Ability;
  *
  * @author pawel_000
  */
-public class LavaBall extends Ability
+public class District extends Ability
 {
+    private float MAX_RANGE = 150.0f;
     private float timeState;
-    private float lifeTime;
     
-    public LavaBall(Player player, SpellCard spellCard, float xVel, float yVel)
+    public District(Player player, SpellCard spellCard)
     {
         super(player, spellCard);
         
-        this.xVel = xVel / 10;
-        this.yVel = yVel / 10;
         this.timeState = 0.0f;
-        this.lifeTime = 0.0f;
+        
+        player.getAbilityController().addAbility(this);
+    }
+    
+    public District(Player player, SpellCard spellCard, float MAX_RANGE)
+    {
+        super(player, spellCard);
+        
+        this.MAX_RANGE = MAX_RANGE;
+        this.timeState = 0.0f;
         
         player.getAbilityController().addAbility(this);
     }
     
     @Override
-    public void update() 
+    public void update()
     {
-        x += xVel;
-        y += yVel;
-        
-        timeState+=Gdx.graphics.getDeltaTime();
-        if(timeState >= 5.0f)
+        if(r < MAX_RANGE)
         {
-            player.getAbilityController().addAbility(new Lava(player, spellCard, x, y));
-            timeState = 0.0f;
+            r += 0.5f;
+            
+            xVel = r / timeState;
+            yVel = r / timeState;
         }
         
-        lifeTime+=Gdx.graphics.getDeltaTime();
-        if(lifeTime >= 5.0f)
+        timeState+=Gdx.graphics.getDeltaTime();
+        if(timeState >= 7.5f)
         {
             player.getAbilityController().removeAbility(this);
-            lifeTime = 0.0f;
         }
     }
 
     @Override
-    public void render(float delta) 
+    public void render(float delta)
     {
-        shapeRenderer.setColor(Color.RED);
+        shapeRenderer.setColor(new Color(1.0f, 1.0f, 0.4f, 0.15f));
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.circle(x, y, 10.0f);
+        shapeRenderer.circle(x, y, r);
         shapeRenderer.end();
     }
 }
