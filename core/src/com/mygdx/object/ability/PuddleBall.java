@@ -3,51 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mygdx.object.ability.fire;
+package com.mygdx.object.ability;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.mygdx.equipment.SpellCard;
 import com.mygdx.object.Player;
-import com.mygdx.object.ability.Ability;
 
 /**
  *
  * @author pawel_000
  */
-public class LavaBall extends Ability
+public class PuddleBall extends Ability
 {
-    private float timeState;
-    private float lifeTime;
-    
-    public LavaBall(Player player, SpellCard spellCard, float xVel, float yVel)
+    private float timeState = 0.0f;
+    private float lifeTime = 0.0f;
+
+    public PuddleBall(Player player, SpellCard spellCard, float r, Color color)
     {
-        super(player, spellCard);
-        
-        this.xVel = xVel / 10;
-        this.yVel = yVel / 10;
-        this.timeState = 0.0f;
-        this.lifeTime = 0.0f;
+        super(player, spellCard, r, color);
         
         player.getAbilityController().addAbility(this);
     }
     
-    @Override
-    public void update() 
+    public void update()
     {
         x += xVel;
         y += yVel;
         
         timeState+=Gdx.graphics.getDeltaTime();
-        if(timeState >= 5.0f)
+        if(timeState >= 0.05f)
         {
-            player.getAbilityController().addAbility(new Lava(player, spellCard, x, y));
+            new Puddle(player, spellCard, r, color, x, y);
             timeState = 0.0f;
         }
         
         lifeTime+=Gdx.graphics.getDeltaTime();
-        if(lifeTime >= 5.0f)
+        if(lifeTime >= 2.0f)
         {
             player.getAbilityController().removeAbility(this);
             lifeTime = 0.0f;
@@ -55,11 +48,12 @@ public class LavaBall extends Ability
     }
 
     @Override
-    public void render(float delta) 
+    public void render(float delta)
     {
-        shapeRenderer.setColor(Color.RED);
+        shapeRenderer.setColor(color);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.circle(x, y, 10.0f);
+        shapeRenderer.circle(x, y, r);
         shapeRenderer.end();
     }
+    
 }

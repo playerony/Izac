@@ -5,18 +5,16 @@
  */
 package com.mygdx.controller;
 
+import com.badlogic.gdx.graphics.Color;
 import com.mygdx.equipment.SpellCard;
 import com.mygdx.game.MyGdxGame;
 import com.mygdx.object.Player;
-import com.mygdx.object.SpellIdentity;
 import com.mygdx.object.ability.Ability;
-import com.mygdx.object.ability.fire.Aurelions;
-import com.mygdx.object.ability.fire.FireBall;
-import com.mygdx.object.ability.fire.HellFire;
-import com.mygdx.object.ability.fire.LavaBall;
-import com.mygdx.object.ability.ice.IceWave;
-import com.mygdx.object.ability.other.District;
-import com.mygdx.object.ability.other.ThrowGarnet;
+import com.mygdx.object.ability.Aurelion;
+import com.mygdx.object.ability.Bullet;
+import com.mygdx.object.ability.BulletWave;
+import com.mygdx.object.ability.District;
+import com.mygdx.object.ability.PuddleBall;
 import java.util.ArrayList;
 
 /**
@@ -47,33 +45,33 @@ public class AbilityController
     
     public void shoot(SpellCard spellCard)
     {
-        SpellIdentity spellIdentity = SpellIdentity.SPELL_0;
+        int abilityID = 0;
         
         if(spellCard != null)
         {
-            spellIdentity = SpellIdentity.valueOf("SPELL_" + spellCard.id);
+            abilityID = spellCard.id;
         }
         
-        switch(spellIdentity)
+        switch(abilityID)
         {
-            case SPELL_0:
-                new District(player, spellCard, 75.0f);
+            case 0:
+                new District(player, spellCard, Color.CYAN);
                 break;
                 
-            case SPELL_1:
-                new FireBall(player, spellCard, player.getxVel(), player.getyVel());
+            case 1:
+                
                 break;
                 
-            case SPELL_2:
-                new LavaBall(player, spellCard, player.getxVel(), player.getyVel());
+            case 2:
+                
                 break;
                 
-            case SPELL_3:
-                new HellFire(player, spellCard);
+            case 3:
+                
                 break;
                 
-            case SPELL_14:
-                new Aurelions(player, spellCard, 2);
+            case 4:
+                
                 break;
         }
     }

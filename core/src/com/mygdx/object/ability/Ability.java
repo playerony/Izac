@@ -5,6 +5,8 @@
  */
 package com.mygdx.object.ability;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.mygdx.equipment.SpellCard;
 import com.mygdx.object.Entity;
 import com.mygdx.object.Player;
@@ -15,29 +17,37 @@ import com.mygdx.object.Player;
  */
 public abstract class Ability extends Entity
 {
+    protected Color color;
+    
     protected Player player;
     protected SpellCard spellCard;
     
-    public Ability(Player player, SpellCard spellCard)
+    private float timeState = 0.0f;
+    
+    public Ability(Player player, SpellCard spellCard, float r, Color color)
     {
         super(player.getX(), player.getY());
         
+        this.r = r;
         this.xVel = player.getxVel();
         this.yVel = player.getyVel();
         
+        this.color = color;
         this.player = player;
         this.spellCard = spellCard;
     }
     
-    public Ability(Player player, SpellCard spellCard, float x, float y)
+    public void update()
     {
-        super(x, y);
+        x += xVel;
+        y += yVel;
         
-        this.player = player;
-        this.spellCard = spellCard;
+        timeState += Gdx.graphics.getDeltaTime();
+        if(timeState >= 3.0f)
+        {
+            player.getAbilityController().removeAbility(this);
+        }
     }
-    
-    public abstract void update();
     
     public abstract void render(float delta);
 

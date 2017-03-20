@@ -3,43 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mygdx.object.ability.light;
+package com.mygdx.object.ability;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.mygdx.equipment.SpellCard;
 import com.mygdx.object.Player;
-import com.mygdx.object.ability.Ability;
 
 /**
  *
  * @author pawel_000
  */
-public class Lighting extends Ability
+public class Puddle extends Ability
 {
-    public Lighting(Player player, SpellCard spellCard, float xVel, float yVel)
+
+    public Puddle(Player player, SpellCard spellCard, float r, Color color, float x, float y)
     {
-        super(player, spellCard);
+        super(player, spellCard, r, color);
         
-        this.xVel = xVel;
-        this.yVel = yVel;
+        this.x = x;
+        this.y = y;
+        this.xVel = 0.0f;
+        this.yVel = 0.0f;
         
         player.getAbilityController().addAbility(this);
     }
-    
-    @Override
-    public void update() 
-    {
-        x += xVel;
-        y += yVel;
-    }
 
     @Override
-    public void render(float delta) 
+    public void render(float delta)
     {
-        shapeRenderer.setColor(Color.CHARTREUSE);
+        shapeRenderer.setColor(color);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.circle(x, y, r);
         shapeRenderer.end();
     }
+    
 }

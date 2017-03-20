@@ -3,28 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mygdx.object.ability.fire;
+package com.mygdx.object.ability;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.mygdx.equipment.SpellCard;
 import com.mygdx.object.Player;
-import com.mygdx.object.ability.Ability;
 
 /**
  *
  * @author pawel_000
  */
-public class Aurelions extends Ability
+public class Aurelion extends Ability
 {
-    private int components;
+    private int components = 0;
     
-    private float timeState;
+    private float timeState = 0.0f;
 
-    public Aurelions(Player player, SpellCard spellCard, int components)
+    public Aurelion(Player player, SpellCard spellCard, float r, Color color, int components)
     {
-        super(player, spellCard);
+        super(player, spellCard, r, color);
         
-        this.timeState = 1.0f;
         this.components = components;
         
         player.getAbilityController().addAbility(this);
@@ -36,7 +35,7 @@ public class Aurelions extends Ability
         timeState+=Gdx.graphics.getDeltaTime();
         if(timeState >= 1.0f)
         {
-            player.getAbilityController().addAbility(new Aurelion(player, spellCard));
+            new AurelionBall(player, spellCard, r, color);
             components--;
             
             timeState = 0.0f;
@@ -51,5 +50,4 @@ public class Aurelions extends Ability
     {
         
     }
-    
 }

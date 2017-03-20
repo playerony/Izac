@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mygdx.object.ability.other;
+package com.mygdx.object.ability;
 
+import com.mygdx.object.ability.Bullet;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.mygdx.equipment.SpellCard;
 import com.mygdx.object.Player;
-import com.mygdx.object.ability.Ability;
 import java.util.Random;
 
 /**
@@ -19,25 +19,24 @@ import java.util.Random;
  */
 public class Garnet extends Ability
 {
-    private float timeState = 0.0f;
     private int power = 20;
     
-    public Garnet(Player player, SpellCard spellCard)
+    private float timeState = 0.0f;
+    private float elementSize = 5.0f;
+    
+    public Garnet(Player player, SpellCard spellCard, float r, Color color)
     {
-        super(player, spellCard);
-        
-        this.r = 30.0f;
+        super(player, spellCard, r, color);
         
         player.getAbilityController().addAbility(this);
     }
     
-    public Garnet(Player player, SpellCard spellCard, float x, float y, float r)
+    public Garnet(Player player, SpellCard spellCard, float r, Color color, float x, float y)
     {
-        super(player, spellCard, x, y);
+        this(player, spellCard, r, color);
         
-        this.r = r;
-        
-        player.getAbilityController().addAbility(this);
+        this.x = x;
+        this.y = y;
     }
 
     @Override
@@ -56,7 +55,7 @@ public class Garnet extends Ability
                   yV = random.nextInt(power) - power / 2;
                 }while(xV == 0 || yV == 0);
                 
-                new Bullet(player, spellCard, x, y, xV, yV);
+                new Bullet(player, spellCard, elementSize, color, x, y, xV, yV);
              }
             
             player.getAbilityController().removeAbility(this);
@@ -66,7 +65,7 @@ public class Garnet extends Ability
     @Override
     public void render(float delta)
     {
-        shapeRenderer.setColor(Color.LIME);
+        shapeRenderer.setColor(color);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.circle(x, y, r);
         shapeRenderer.end();
